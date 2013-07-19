@@ -32,14 +32,15 @@
             this.musicDirDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.filteredFilesTreeView = new System.Windows.Forms.TreeView();
             this.musicDirLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bitrateTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lessThanRadioButton = new System.Windows.Forms.RadioButton();
             this.greaterThanRadioButton = new System.Windows.Forms.RadioButton();
             this.processButton = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.processProgressBar = new System.Windows.Forms.ProgressBar();
             this.filetypeComboBox = new System.Windows.Forms.ComboBox();
             this.filetypeLabel = new System.Windows.Forms.Label();
+            this.processLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // musicDirButton
@@ -69,13 +70,13 @@
             this.musicDirLabel.TabIndex = 2;
             this.musicDirLabel.Text = "None";
             // 
-            // textBox1
+            // bitrateTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "192";
+            this.bitrateTextBox.Location = new System.Drawing.Point(22, 96);
+            this.bitrateTextBox.Name = "bitrateTextBox";
+            this.bitrateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.bitrateTextBox.TabIndex = 3;
+            this.bitrateTextBox.Text = "192";
             // 
             // label1
             // 
@@ -120,17 +121,20 @@
             this.processButton.UseVisualStyleBackColor = true;
             this.processButton.Click += new System.EventHandler(this.processButton_Click);
             // 
-            // progressBar1
+            // processProgressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(22, 335);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 23);
-            this.progressBar1.TabIndex = 8;
+            this.processProgressBar.Location = new System.Drawing.Point(22, 335);
+            this.processProgressBar.Name = "processProgressBar";
+            this.processProgressBar.Size = new System.Drawing.Size(169, 23);
+            this.processProgressBar.TabIndex = 8;
             // 
             // filetypeComboBox
             // 
+            this.filetypeComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.filetypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.filetypeComboBox.FormattingEnabled = true;
             this.filetypeComboBox.Items.AddRange(new object[] {
+            "*",
             "mp3"});
             this.filetypeComboBox.Location = new System.Drawing.Point(22, 180);
             this.filetypeComboBox.Name = "filetypeComboBox";
@@ -146,19 +150,28 @@
             this.filetypeLabel.TabIndex = 10;
             this.filetypeLabel.Text = "Filetype";
             // 
+            // processLabel
+            // 
+            this.processLabel.AutoSize = true;
+            this.processLabel.Location = new System.Drawing.Point(104, 315);
+            this.processLabel.Name = "processLabel";
+            this.processLabel.Size = new System.Drawing.Size(0, 13);
+            this.processLabel.TabIndex = 11;
+            // 
             // BitrateFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 370);
+            this.Controls.Add(this.processLabel);
             this.Controls.Add(this.filetypeLabel);
             this.Controls.Add(this.filetypeComboBox);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.processProgressBar);
             this.Controls.Add(this.processButton);
             this.Controls.Add(this.greaterThanRadioButton);
             this.Controls.Add(this.lessThanRadioButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bitrateTextBox);
             this.Controls.Add(this.musicDirLabel);
             this.Controls.Add(this.filteredFilesTreeView);
             this.Controls.Add(this.musicDirButton);
@@ -176,14 +189,15 @@
         private System.Windows.Forms.FolderBrowserDialog musicDirDialog;
         private System.Windows.Forms.TreeView filteredFilesTreeView;
         private System.Windows.Forms.Label musicDirLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox bitrateTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton lessThanRadioButton;
         private System.Windows.Forms.RadioButton greaterThanRadioButton;
         private System.Windows.Forms.Button processButton;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar processProgressBar;
         private System.Windows.Forms.ComboBox filetypeComboBox;
         private System.Windows.Forms.Label filetypeLabel;
+        private System.Windows.Forms.Label processLabel;
 
     }
 }
